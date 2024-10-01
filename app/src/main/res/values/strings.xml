@@ -43,4 +43,13 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="header">Distance Converter</string>
+    <string name="label_input">Input Distance</string>
+    <string name="input_placeholder">Input Desired Distance (in m or km)</string>
+    <string name="convert_button">Convert</string>
+    <string name="dropdown_name">Please input converter</string>
+    <string-array name="converter_lists">
+        <item>KM to Miles</item>
+        <item>Miles to KM</item>
+    </string-array>
 </resources>
