@@ -47,10 +47,10 @@ class MainActivity : AppCompatActivity() {
                 val selected = mySpinner.selectedItem.toString()
                 if(selected == "KM to Miles") {
                     val res = inputDouble * 0.621
-                    findViewById<TextView>(R.id.result_tv).text = "Result: ${res.toString()} Miles"
+                    findViewById<TextView>(R.id.value_result).text = "${res.toString()} Miles"
                 } else {
                     val res = inputDouble * 1.609
-                    findViewById<TextView>(R.id.result_tv).text = "Result: ${res.toString()} Kilometres"
+                    findViewById<TextView>(R.id.value_result).text = "${res.toString()} Kilometres"
                 }
             } else {
                 Toast.makeText(this, "Invalid input!", Toast.LENGTH_SHORT).show()
