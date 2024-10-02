@@ -11,6 +11,8 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
@@ -37,6 +39,23 @@ class MainActivity : AppCompatActivity() {
         ).also { adapter ->
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             mySpinner.adapter = adapter
+        }
+
+        mySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                val selected = parent?.getItemAtPosition(position).toString()
+                if(selected == "KM to Miles") {
+                    findViewById<TextView>(R.id.tv1).text = "Km"
+                    findViewById<TextView>(R.id.tv2).text = "Miles"
+                } else {
+                    findViewById<TextView>(R.id.tv1).text = "Miles"
+                    findViewById<TextView>(R.id.tv2).text = "Km"
+                }
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
         }
 
         val input = findViewById<EditText>(R.id.raw_distance)
